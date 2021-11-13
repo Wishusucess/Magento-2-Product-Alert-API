@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Category: Wishusucess Product Alert API 
+ * Developer: Hemant Singh Magento 2x Developer
+ * Website: http://wwww.wishusucess.com
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <!-- Add product stock alert start-->
+   <route url="/V1/productalertstock/add/:productId" method="POST">
+        <service class="Wishusucess\ProductAlertApi\Api\ProductAlertManagementInterface" method="addProductAlertStock"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <!-- Add product stock alert ends-->
+    <!-- Delete product stock alert start-->
+   <route url="/V1/productalertstock/delete/:productId" method="POST">
+        <service class="Wishusucess\ProductAlertApi\Api\ProductAlertManagementInterface" method="deleteProductAlertStock"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <!-- Delete product stock alert ends-->
+    <!-- Add product price alert start-->
+    <route url="/V1/productalertprice/add/:productId" method="POST">
+        <service class="Wishusucess\ProductAlertApi\Api\ProductAlertManagementInterface" method="addProductAlertPrice"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <!-- Add product price alert ends-->
+    <!-- Delete product price alert start-->
+    <route url="/V1/productalertprice/delete/:productId" method="POST">
+        <service class="Wishusucess\ProductAlertApi\Api\ProductAlertManagementInterface" method="deleteProductAlertPrice"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <!-- Delete product price alert ends-->
+</routes>
